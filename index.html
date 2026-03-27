@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lions Proxy | Retro Bowl</title>
+    <script src="https://cdn.jsdelivr.net/npm/@titaniumnetwork-dev/ultraviolet@latest/dist/uv.bundle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@titaniumnetwork-dev/ultraviolet@latest/dist/uv.handler.js"></script>
+    <script src="uv/uv.config.js"></script>
+    <script src="register-sw.js"></script>
+</head>
+<body>
+    <h1 style="color:#0076B6;">Lions Dynasty Proxy</h1>
+    <p>Enter the game URL below:</p>
+    <input id="address" placeholder="e.g. retrobowl.me" style="padding:10px; width:250px;">
+    <button onclick="launch()" style="padding:10px; background:#B0B7BC;">Play</button>
+    <script>
+        function launch() {
+            const url = document.getElementById('address').value;
+            window.location.href = __uv$config.prefix + __uv$config.encodeUrl(url);
+        }
+    </script>
+</body>
+</html>
